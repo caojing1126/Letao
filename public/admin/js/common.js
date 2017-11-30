@@ -14,7 +14,9 @@ $(document).ajaxStop(function(){
 });
 
 
-if(location.href.indexOf("login.html") == -1){
+
+//在非登录页，发送ajax请求，询问是否登录，若没有登录，就跳转到登录页
+if(location.href.indexOf("login.html") == -1){      //看看地址字符串中是否有字符串“login.html”，“=-1”表示没有，则表示在非登录页
 	$.ajax({
 		type:"get",
 		url:"/employee/checkRootLogin",
